@@ -39,14 +39,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+http://github.com/manuelabarca/react-native-rn-klarna-osm/react-native-rn-klarna-osm.git"
+    "url": "git+http://github.com/manuelabarca/react-native-rn-klarna-osm.git"
   },
   "author": "Manuel Labarca <manuel.labarca@iskaypet.com> (http://github.com/manuelabarca/react-native-rn-klarna-osm)",
   "license": "MIT",
   "bugs": {
-    "url": "http://github.com/manuelabarca/react-native-rn-klarna-osm/react-native-rn-klarna-osm/issues"
+    "url": "http://github.com/manuelabarca/react-native-rn-klarna-osm/issues"
   },
-  "homepage": "http://github.com/manuelabarca/react-native-rn-klarna-osm/react-native-rn-klarna-osm#readme",
+  "homepage": "http://github.com/manuelabarca/react-native-rn-klarna-osm#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
