@@ -1,6 +1,3 @@
-import Foundation
-import KlarnaMobileSDK
-
 @objc(RnKlarnaOsmViewManager)
 class RnKlarnaOsmViewManager: RCTViewManager {
 
@@ -13,6 +10,8 @@ class RnKlarnaOsmViewManager: RCTViewManager {
   }
 }
 
+import Foundation
+import KlarnaMobileSDK
 class RnKlarnaOsmView : UIView {
 
  private var osmView: KlarnaOSMView
