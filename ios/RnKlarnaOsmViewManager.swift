@@ -1,3 +1,6 @@
+import Foundation
+import KlarnaMobileSDK
+
 @objc(RnKlarnaOsmViewManager)
 class RnKlarnaOsmViewManager: RCTViewManager {
 
