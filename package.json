@@ -35,7 +35,11 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "klarna",
+    "osm",
+    "payments",
+    "banner"
   ],
   "repository": {
     "type": "git",
