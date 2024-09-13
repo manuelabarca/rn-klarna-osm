@@ -76,8 +76,29 @@ class RnKlarnaOsmView : UIView {
         osmView.placementKey = placementKey
         osmView.locale = locale
 
-        osmView.environment = KlarnaEnvironment(rawValue: environment) ?? .demo
-        osmView.region = KlarnaRegion(rawValue: region) ?? .eu
+        //TODO: CHANGE THIS, NOW FOR MVP.
+
+      switch environment {
+        case 0:
+            osmView.environment = .demo
+        case 1:
+            osmView.environment = .playground
+        case 2:
+            osmView.environment = .production
+        default:
+            osmView.environment = .demo
+        }
+        
+      switch region {
+        case 0:
+            osmView.region = .eu
+        case 1:
+            osmView.region = .na
+        case 2:
+            osmView.region = .oc
+        default:
+            osmView.region = .eu
+        }
 
         osmView.purchaseAmount = amount != 0 ? amount : nil
 
