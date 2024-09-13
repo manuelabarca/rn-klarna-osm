@@ -1,5 +1,5 @@
 {
-  "name": "react-native-rn-klarna-osm",
+  "name": "rn-klarna-osm",
   "version": "0.1.7",
   "description": "Klarna osm for react native",
   "source": "./src/index.tsx",
@@ -39,14 +39,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+http://github.com/manuelabarca/react-native-rn-klarna-osm.git"
+    "url": "git+http://github.com/manuelabarca/rn-klarna-osm.git"
   },
-  "author": "Manuel Labarca <manuel.labarca@iskaypet.com> (http://github.com/manuelabarca/react-native-rn-klarna-osm)",
+  "author": "Manuel Labarca <manuel.labarca@iskaypet.com> (http://github.com/manuelabarca/rn-klarna-osm)",
   "license": "MIT",
   "bugs": {
-    "url": "http://github.com/manuelabarca/react-native-rn-klarna-osm/issues"
+    "url": "http://github.com/manuelabarca/rn-klarna-osm/issues"
   },
-  "homepage": "http://github.com/manuelabarca/react-native-rn-klarna-osm#readme",
+  "homepage": "http://github.com/manuelabarca/rn-klarna-osm#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
