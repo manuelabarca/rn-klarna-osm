@@ -2,7 +2,9 @@ import {
   requireNativeComponent,
   UIManager,
   Platform,
-  type ViewStyle, type NativeSyntheticEvent, type DimensionValue
+  type ViewStyle,
+  type NativeSyntheticEvent,
+  type DimensionValue,
 } from 'react-native';
 
 import React, { useState, useCallback } from 'react';
@@ -13,34 +15,34 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-  export enum KlarnaOSMEnvironment {
-    demo,
-    production,
-    playground,
-  }
-  
-  export enum KlarnaOSMRegion {
-    EU,
-    NA,
-    OC,
-  }
-  
-  export type KlarnaOSMViewError = {
-    name: string;
-    message: string;
-    isFatal: boolean;
-  };
-  
-  export type KlarnaOnsiteMessagingProps = {
-    style?: ViewStyle;
-    clientId: string;
-    placementKey: string;
-    locale: string;
-    environment: KlarnaOSMEnvironment;
-    region: KlarnaOSMRegion;
-    purchaseAmount?: number;
-    onOSMViewError?: (error: KlarnaOSMViewError) => void;
-  };
+export enum KlarnaOSMEnvironment {
+  demo,
+  production,
+  playground,
+}
+
+export enum KlarnaOSMRegion {
+  EU,
+  NA,
+  OC,
+}
+
+export type KlarnaOSMViewError = {
+  name: string;
+  message: string;
+  isFatal: boolean;
+};
+
+export type KlarnaOnsiteMessagingProps = {
+  style?: ViewStyle;
+  clientId: string;
+  placementKey: string;
+  locale: string;
+  environment: KlarnaOSMEnvironment;
+  region: KlarnaOSMRegion;
+  purchaseAmount?: number;
+  onOSMViewError?: (error: KlarnaOSMViewError) => void;
+};
 
 type InternalKlarnaOnsiteMessagingProps = Omit<
   KlarnaOnsiteMessagingProps,
@@ -50,7 +52,7 @@ type InternalKlarnaOnsiteMessagingProps = Omit<
   onOSMViewError: (event: NativeSyntheticEvent<KlarnaOSMViewError>) => void;
 };
 
-const ComponentName = 'RnKlarnaOsmViewComponent';
+const ComponentName = 'RnKlarnaOsmView';
 
 export const RnKlarnaOsmView =
   UIManager.getViewManagerConfig(ComponentName) != null
@@ -59,13 +61,17 @@ export const RnKlarnaOsmView =
         throw new Error(LINKING_ERROR);
       };
 
-export const RnKlarnaOsmViewComponent: React.FC<KlarnaOnsiteMessagingProps> = ({ style, onOSMViewError, ...restProps}) => {
+export const RnKlarnaOsmViewComponent: React.FC<KlarnaOnsiteMessagingProps> = ({
+  style,
+  onOSMViewError,
+  ...restProps
+}) => {
   const [nativeHeight, setNativeHeight] = useState<DimensionValue>(1);
 
   const handleheightChange = useCallback(
-    (event: NativeSyntheticEvent<{height?: number}>) => {
-      if(event.nativeEvent.height) {
-        setNativeHeight(event.nativeEvent.height)
+    (event: NativeSyntheticEvent<{ height?: number }>) => {
+      if (event.nativeEvent.height) {
+        setNativeHeight(event.nativeEvent.height);
       }
     },
     []
@@ -82,9 +88,9 @@ export const RnKlarnaOsmViewComponent: React.FC<KlarnaOnsiteMessagingProps> = ({
   return (
     <RnKlarnaOsmView
       {...restProps}
-      style={{height: nativeHeight, ...style}}
+      style={{ height: nativeHeight, ...style }}
       onHeightChange={handleheightChange}
       onOSMViewError={handleNativeError}
     />
-  )
-}
+  );
+};
