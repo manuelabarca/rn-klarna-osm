@@ -16,9 +16,9 @@ const LINKING_ERROR =
   '- You are not using Expo Go\n';
 
 export enum KlarnaOSMEnvironment {
-  demo,
-  production,
-  playground,
+  demo = 0,
+  playground = 1,
+  production = 2,
 }
 
 export enum KlarnaOSMRegion {
