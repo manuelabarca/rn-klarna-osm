@@ -8,8 +8,8 @@ import kotlin.reflect.KClass
 fun KClass<KlarnaEnvironment>.fromRawValue(value: Int): KlarnaEnvironment =
   when(value) {
     0 -> KlarnaEnvironment.DEMO
-    1 -> KlarnaEnvironment.PRODUCTION
-    2 -> KlarnaEnvironment.PLAYGROUND
+    1 -> KlarnaEnvironment.PLAYGROUND
+    2 -> KlarnaEnvironment.PRODUCTION
     else -> KlarnaEnvironment.DEMO
   }
 
