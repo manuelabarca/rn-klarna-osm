@@ -4,6 +4,8 @@ import android.util.Log
 import android.widget.LinearLayout
 import com.facebook.react.uimanager.ThemedReactContext
 import com.klarna.mobile.sdk.api.osm.*
+import com.klarna.mobile.sdk.api.KlarnaEnvironment
+import com.klarna.mobile.sdk.api.KlarnaRegion
 
 class KlarnaOnsiteMessagingLayout(
   private val reactContext: ThemedReactContext,
@@ -29,10 +31,18 @@ class KlarnaOnsiteMessagingLayout(
     osmView.clientId = clientId
     osmView.placementKey = placementKey
     osmView.locale = locale
-    osmView.environment = KlarnaOSMEnvironment::class.fromRawValue(environment)
-    osmView.region = KlarnaOSMRegion::class.fromRawValue(region)
+    osmView.environment = KlarnaEnvironment::class.fromRawValue(environment)
+    osmView.region = KlarnaRegion::class.fromRawValue(region)
     osmView.purchaseAmount = purchaseAmount?.toLong()
     osmView.hostActivity = reactContext.currentActivity
+
+      Log.d(TAG, "clientId: $clientId")
+    Log.d(TAG, "placementKey: $placementKey")
+    Log.d(TAG, "locale: $locale")
+    Log.d(TAG, "environment: ${KlarnaEnvironment::class.fromRawValue(environment)}")
+    Log.d(TAG, "region: ${KlarnaRegion::class.fromRawValue(region)}")
+    Log.d(TAG, "purchaseAmount: ${purchaseAmount?.toLong()}")
+    Log.d(TAG, "hostActivity: ${reactContext.currentActivity}")
 
     osmView.render(RenderResult {
       if(it != null) {

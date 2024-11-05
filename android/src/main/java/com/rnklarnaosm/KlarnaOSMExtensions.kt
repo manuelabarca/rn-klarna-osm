@@ -1,22 +1,22 @@
 package com.rnklarnaosm
 
 
-import com.klarna.mobile.sdk.api.osm.KlarnaOSMEnvironment
-import com.klarna.mobile.sdk.api.osm.KlarnaOSMRegion
+import com.klarna.mobile.sdk.api.KlarnaEnvironment
+import com.klarna.mobile.sdk.api.KlarnaRegion
 import kotlin.reflect.KClass
 
-fun KClass<KlarnaOSMEnvironment>.fromRawValue(value: Int): KlarnaOSMEnvironment =
+fun KClass<KlarnaEnvironment>.fromRawValue(value: Int): KlarnaEnvironment =
   when(value) {
-    0 -> KlarnaOSMEnvironment.DEMO
-    1 -> KlarnaOSMEnvironment.PRODUCTION
-    2 -> KlarnaOSMEnvironment.PLAYGROUND
-    else -> KlarnaOSMEnvironment.DEMO
+    0 -> KlarnaEnvironment.DEMO
+    1 -> KlarnaEnvironment.PRODUCTION
+    2 -> KlarnaEnvironment.PLAYGROUND
+    else -> KlarnaEnvironment.DEMO
   }
 
-fun KClass<KlarnaOSMRegion>.fromRawValue(value: Int): KlarnaOSMRegion =
+fun KClass<KlarnaRegion>.fromRawValue(value: Int): KlarnaRegion =
   when(value) {
-    0 -> KlarnaOSMRegion.EU
-    1 -> KlarnaOSMRegion.NA
-    2 -> KlarnaOSMRegion.OC
-    else -> KlarnaOSMRegion.EU
+    0 -> KlarnaRegion.EU
+    1 -> KlarnaRegion.NA
+    2 -> KlarnaRegion.OC
+    else -> KlarnaRegion.EU
   }
