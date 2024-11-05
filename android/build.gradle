@@ -101,7 +101,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation 'com.klarna.mobile:sdk:2.x.x'
+  implementation 'com.klarna.mobile:sdk:2.6.18'
 
 }
 
