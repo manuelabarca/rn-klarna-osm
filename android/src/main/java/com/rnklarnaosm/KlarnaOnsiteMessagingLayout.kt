@@ -6,7 +6,6 @@ import com.facebook.react.uimanager.ThemedReactContext
 import com.klarna.mobile.sdk.api.osm.*
 import com.klarna.mobile.sdk.api.KlarnaEnvironment
 import com.klarna.mobile.sdk.api.KlarnaRegion
-import android.util.Log
 
 
 class KlarnaOnsiteMessagingLayout(
@@ -15,7 +14,7 @@ class KlarnaOnsiteMessagingLayout(
 ): LinearLayout(reactContext) {
   private val osmView: KlarnaOSMView
   private const val TAG = "OsmViewSetup"
-  
+
   init {
     inflate(context, R.layout.klarna_onsite_messaging_layout, this)
 
