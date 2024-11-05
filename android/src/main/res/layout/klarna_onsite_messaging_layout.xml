@@ -6,9 +6,8 @@
   android:layout_height="match_parent">
 
   <com.klarna.mobile.sdk.api.osm.KlarnaOSMView
-    android:id="@+id/klarnaOsmView"
-    android:background="@color/background_browser_klarna_inapp_sdk"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+  android:id="@+id/klarnaOsmView"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content" />
 
 </LinearLayout>
