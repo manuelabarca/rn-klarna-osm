@@ -9,8 +9,8 @@ import com.facebook.react.uimanager.annotations.ReactProp
 class RnKlarnaOsmViewManager : ViewGroupManager<KlarnaOnsiteMessagingLayout>() {
   override fun getName() = "RnKlarnaOsmView"
 
-  override fun createViewInstance(reactContext: ThemedReactContext): View {
-    return View(reactContext)
+  override fun createViewInstance(reactContext: ThemedReactContext): KlarnaOnsiteMessagingLayout {
+    return KlarnaOnsiteMessagingLayout(reactContext, KlarnaOnsiteMessagingEventEmitter(reactContext))
   }
 
   @ReactProp(name = "clientId")
