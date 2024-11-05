@@ -5,6 +5,9 @@ buildscript {
   repositories {
     google()
     mavenCentral()
+    maven {
+      url 'https://x.klarnacdn.net/mobile-sdk/'
+    }
   }
 
   dependencies {
@@ -85,6 +88,9 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven {
+    url 'https://x.klarnacdn.net/mobile-sdk/'
+  }
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -95,5 +101,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation 'com.klarna.mobile:sdk:2.x.x'
+
 }
 
