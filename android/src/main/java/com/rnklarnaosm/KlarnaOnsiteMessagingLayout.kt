@@ -15,6 +15,7 @@ class KlarnaOnsiteMessagingLayout(
   private val eventEmitter: KlarnaOnsiteMessagingEventEmitter
 ): LinearLayout(reactContext) {
   val osmView: KlarnaOSMView = KlarnaOSMView(reactContext)
+  private var previousProps: Map<String, Any?> = emptyMap()
 
   init {
     val layoutParams = ViewGroup.LayoutParams(
@@ -24,6 +25,21 @@ class KlarnaOnsiteMessagingLayout(
     this.addView(osmView, layoutParams)
 
     osmView.hostActivity = reactContext.currentActivity
+  }
+
+  fun shouldReRender(): Boolean {
+    val currentProps = mapOf(
+      "clientId" to osmView.clientId,
+      "placementKey" to osmView.placementKey,
+      "locale" to osmView.locale,
+      "environment" to osmView.environment,
+      "region" to osmView.region,
+      "purchaseAmount" to osmView.purchaseAmount
+    )
+
+    val shouldReRender = currentProps != previousProps
+    previousProps = currentProps
+    return shouldReRender
   }
 
   fun setupOSMView() {
