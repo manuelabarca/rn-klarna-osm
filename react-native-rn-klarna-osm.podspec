@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
       s.dependency "RCTRequired"
       s.dependency "RCTTypeSafety"
       s.dependency "ReactCommon/turbomodule/core"
-      s.dependency "KlarnaMobileSDK/basic", "~> 2.6.16"
+      s.dependency "KlarnaMobileSDK/basic", "~> 2.6.22"
 
     end
   end
