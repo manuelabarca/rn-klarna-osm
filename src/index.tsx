@@ -66,7 +66,9 @@ export const RnKlarnaOsmViewComponent: React.FC<KlarnaOnsiteMessagingProps> = ({
   onOSMViewError,
   ...restProps
 }) => {
-  const [nativeHeight, setNativeHeight] = useState<DimensionValue>(1);
+  const nativeHPlatform = Platform.OS === 'android' ? 70 : 0;
+  const [nativeHeight, setNativeHeight] =
+    useState<DimensionValue>(nativeHPlatform);
 
   const handleheightChange = useCallback(
     (event: NativeSyntheticEvent<{ height?: number }>) => {

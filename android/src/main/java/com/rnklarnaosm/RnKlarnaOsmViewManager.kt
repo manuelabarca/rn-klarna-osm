@@ -56,7 +56,9 @@ class RnKlarnaOsmViewManager : ViewGroupManager<KlarnaOnsiteMessagingLayout>() {
 
   override fun onAfterUpdateTransaction(view: KlarnaOnsiteMessagingLayout) {
     super.onAfterUpdateTransaction(view)
-    view.setupOSMView()
+    if (view.shouldReRender()) { 
+      view.setupOSMView()
+    }
   }
 
   override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any> {

@@ -15,7 +15,7 @@ class KlarnaOnsiteMessagingEventEmitter(
     context
       .getNativeModule(UIManagerModule::class.java)
       ?.eventDispatcher
-      ?.dispatchEvent(object: Event<Event<*>>(id) {
+      ?.dispatchEvent(object: Event<KlarnaOnsiteMessagingEventEmitter>(id) {
         override fun getEventName(): String {
           return name
         }
@@ -28,17 +28,14 @@ class KlarnaOnsiteMessagingEventEmitter(
 
   fun onOSMError(error: KlarnaMobileSDKError, id: Int) {
     val map = Arguments.createMap()
-
     map.putString("message", error.message)
     map.putString("name", error.name)
     map.putBoolean("isFatal", error.isFatal)
-
     emit("onOSMViewError", id, map)
   }
 
   fun onRender(id: Int) {
     val map = Arguments.createMap()
-
     emit("onHeightChange", id, map)
   }
 }
