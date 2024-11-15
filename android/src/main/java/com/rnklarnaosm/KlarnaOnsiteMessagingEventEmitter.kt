@@ -15,7 +15,7 @@ class KlarnaOnsiteMessagingEventEmitter(
     context
       .getNativeModule(UIManagerModule::class.java)
       ?.eventDispatcher
-      ?.dispatchEvent(object: Event<KlarnaOnsiteMessagingEventEmitter>(id) {
+      ?.dispatchEvent(object: Event<Event<*>>(id) {
         override fun getEventName(): String {
           return name
         }
